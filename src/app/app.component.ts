@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+/***
+ * A minimal repro for typing issue with apache-arrow
+ * Uncommenting the code below will cause the following error when running ng serve from the root of this project:
+ * TS2322: Type 'Timeout' is not assignable to type 'number'
+ * 
+ * Specifically, the issue can be minimally reproduced simply by importing the apache-arrow package i.e. uncommenting line 12
+ * The issue is not present when the apache-arrow package is not imported. So leaving line 12 commented out will not cause the error
+ */
 // import { tableFromArrays } from 'apache-arrow';
 // function createArrowTable() {
 //   // Create a Table from JavaScript arrays sample from https://arrow.apache.org/docs/js/
